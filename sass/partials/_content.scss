@@ -1,0 +1,12 @@
+@import "../global/mixin";
+
+.content {
+  padding: 20px;
+  @for $i from 1 through 9 {
+    .square-#{$i} {
+      @extend %square;
+      @include square(calc(#{$i} * 20px), 5px);
+      @include randomColor(random(9));
+    }
+  }
+}

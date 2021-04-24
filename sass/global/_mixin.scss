@@ -1,0 +1,43 @@
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+@mixin square-standard {
+  width: 20px;
+  height: 20px;
+}
+
+@mixin randomColor($input) {
+  $color-square: black !default;
+  @if $input == 1 {
+    $color-square: green;
+  }
+  @if $input == 2 {
+    $color-square: yellow;
+  }
+  @if $input == 3 {
+    $color-square: purple;
+  }
+  @if $input == 4 {
+    $color-square: aqua;
+  }
+  @if $input == 5 {
+    $color-square: blue;
+  }
+  @if $input == 6 {
+    $color-square: rgb(212, 101, 203);
+  }
+  @if $input == 7 {
+    $color-square: rgb(223, 88, 26);
+  }
+  background-color: $color-square;
+}
+
+%square {
+  display: inline-block;
+  background-color: blue;
+  box-shadow: 1px 1px 1px black;
+}
